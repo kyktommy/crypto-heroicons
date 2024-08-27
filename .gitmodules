@@ -1,0 +1,3 @@
+[submodule "crypto-logos-cc"]
+	path = crypto-logos-cc
+	url = https://github.com/coinwink/crypto-logos-cc.git
