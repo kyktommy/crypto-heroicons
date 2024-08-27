@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="CIRCLE_OUTLINE_BLACK" x="0" y="0" style="enable-background:new 0 0 512 512" version="1.1" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <style>
+    .st0{fill:none}
+  </style>
+  <path d="M34.8 385h442.3c0-.1.1-.1.1-.2H34.7c.1.1.1.1.1.2zM0 256s0 .1 0 0l512 .1v-.2L0 256c0-.1 0 0 0 0zM34.8 127c0 .1-.1.1-.1.2h442.5c0-.1-.1-.1-.1-.2H34.8z" class="st0"/>
+  <path d="M256 0C161.7 0 79.2 51 34.8 127h442.3C432.8 51 350.3 0 256 0z" style="fill:#27a4e0"/>
+  <path d="M0 255.9h512c0-46.9-12.7-90.9-34.7-128.7H34.7C12.7 165 0 209 0 255.9z" style="fill:#f81515"/>
+  <path d="M34.7 384.8h442.5C499.3 347 512 303 512 256.1H0C0 303 12.7 347 34.7 384.8z" style="fill:#fbb92b"/>
+  <path d="M256 512c94.3 0 176.8-51 221.2-127H34.8C79.2 461 161.7 512 256 512z" style="fill:#54e226"/>
+</svg>

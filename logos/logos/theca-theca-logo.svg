@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="svg9" x="0" y="0" version="1.1" viewBox="0 0 476 476" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <style id="style1" type="text/css">
+    .st2{fill:#00287b}.st6{fill:#fff}
+  </style>
+  <g id="Layer_2" transform="translate(-18 -18)">
+    <g id="g9">
+      <linearGradient id="SVGID_00000151540006773444072650000002773149543797671581_" x1="87.709" x2="424.291" y1="87.709" y2="424.291" gradientUnits="userSpaceOnUse">
+        <stop id="stop5" offset=".001" style="stop-color:#00c99d"/>
+        <stop id="stop6" offset="1" style="stop-color:#7038ca"/>
+      </linearGradient>
+      <circle id="circle6" cx="256" cy="256" r="238" style="fill:url(#SVGID_00000151540006773444072650000002773149543797671581_)"/>
+      <g id="g8">
+        <path id="path6" d="M388.2 176.7H123.8v-16.9c0-19.9 16.1-36 36-36h192.4c19.9 0 36 16.1 36 36z" class="st6"/>
+        <path id="path7" d="M176.7 388.2h-16.9c-19.9 0-36-16.1-36-36V229.6h16.9c19.9 0 36 16.1 36 36z" class="st6"/>
+        <path id="rect7" d="M229.6 176.7h52.9v211.6h-52.9z" class="st6"/>
+        <path id="path8" d="M352.2 388.2h-16.9V265.6c0-19.9 16.1-36 36-36h16.9v122.7c0 19.8-16.1 35.9-36 35.9z" class="st6"/>
+      </g>
+    </g>
+  </g>
+</svg>

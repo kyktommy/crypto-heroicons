@@ -71,7 +71,7 @@ async function getIcons(style) {
   return Promise.all(
     files.map(async (file) => ({
       svg: await fs.readFile(`./optimized/${style}/${file}`, 'utf8'),
-      componentName: `${camelcase(file.replace(/\.svg$/, ''), {
+      componentName: `X${camelcase(file.replace(/\.svg$/, ''), {
         pascalCase: true,
       })}Icon`,
       isDeprecated: deprecated.includes(file),
@@ -120,20 +120,24 @@ async function buildIcons(package, style, format) {
         if (isDeprecated) {
           types.push(`/** @deprecated */`)
         }
-        types.push(`declare const ${componentName}: React.ForwardRefExoticComponent<React.PropsWithoutRef<React.SVGProps<SVGSVGElement>> & { title?: string, titleId?: string } & React.RefAttributes<SVGSVGElement>>;`)
+        types.push(
+          `declare const ${componentName}: React.ForwardRefExoticComponent<React.PropsWithoutRef<React.SVGProps<SVGSVGElement>> & { title?: string, titleId?: string } & React.RefAttributes<SVGSVGElement>>;`
+        )
         types.push(`export default ${componentName};`)
       } else {
         types.push(`import type { FunctionalComponent, HTMLAttributes, VNodeProps } from 'vue';`)
         if (isDeprecated) {
           types.push(`/** @deprecated */`)
         }
-        types.push(`declare const ${componentName}: FunctionalComponent<HTMLAttributes & VNodeProps>;`)
+        types.push(
+          `declare const ${componentName}: FunctionalComponent<HTMLAttributes & VNodeProps>;`
+        )
         types.push(`export default ${componentName};`)
       }
 
       return [
         ensureWrite(`${outDir}/${componentName}.js`, content),
-        ...(types ? [ensureWrite(`${outDir}/${componentName}.d.ts`, types.join("\n") + "\n")] : []),
+        ...(types ? [ensureWrite(`${outDir}/${componentName}.d.ts`, types.join('\n') + '\n')] : []),
       ]
     })
   )
@@ -159,9 +163,6 @@ async function buildExports(styles) {
   pkg[`./package.json`] = { default: './package.json' }
 
   // Backwards compatibility with v1 imports (points to proxy that prints an error message):
-  pkg['./outline'] = { default: './outline/index.js' }
-  pkg['./outline/index'] = { default: './outline/index.js' }
-  pkg['./outline/index.js'] = { default: './outline/index.js' }
   pkg['./solid'] = { default: './solid/index.js' }
   pkg['./solid/index'] = { default: './solid/index.js' }
   pkg['./solid/index.js'] = { default: './solid/index.js' }
@@ -205,35 +206,18 @@ async function main(package) {
 
   console.log(`Building ${package} package...`)
 
-  await Promise.all([
-    rimraf(`./${package}/16/solid/*`),
-    rimraf(`./${package}/20/solid/*`),
-    rimraf(`./${package}/24/outline/*`),
-    rimraf(`./${package}/24/solid/*`),
-  ])
+  await Promise.all([rimraf(`./${package}/logos/*`)])
 
   await Promise.all([
-    buildIcons(package, '16/solid', 'cjs'),
-    buildIcons(package, '16/solid', 'esm'),
-    buildIcons(package, '20/solid', 'cjs'),
-    buildIcons(package, '20/solid', 'esm'),
-    buildIcons(package, '24/outline', 'cjs'),
-    buildIcons(package, '24/outline', 'esm'),
-    buildIcons(package, '24/solid', 'cjs'),
-    buildIcons(package, '24/solid', 'esm'),
-    ensureWriteJson(`./${package}/16/solid/esm/package.json`, esmPackageJson),
-    ensureWriteJson(`./${package}/16/solid/package.json`, cjsPackageJson),
-    ensureWriteJson(`./${package}/20/solid/esm/package.json`, esmPackageJson),
-    ensureWriteJson(`./${package}/20/solid/package.json`, cjsPackageJson),
-    ensureWriteJson(`./${package}/24/outline/esm/package.json`, esmPackageJson),
-    ensureWriteJson(`./${package}/24/outline/package.json`, cjsPackageJson),
-    ensureWriteJson(`./${package}/24/solid/esm/package.json`, esmPackageJson),
-    ensureWriteJson(`./${package}/24/solid/package.json`, cjsPackageJson),
+    buildIcons(package, 'logos', 'cjs'),
+    buildIcons(package, 'logos', 'esm'),
+    ensureWriteJson(`./${package}/logos/esm/package.json`, esmPackageJson),
+    ensureWriteJson(`./${package}/logos/package.json`, cjsPackageJson),
   ])
 
   let packageJson = JSON.parse(await fs.readFile(`./${package}/package.json`, 'utf8'))
 
-  packageJson.exports = await buildExports(['16/solid', '20/solid', '24/outline', '24/solid'])
+  packageJson.exports = await buildExports(['logos'])
 
   await ensureWriteJson(`./${package}/package.json`, packageJson)
 

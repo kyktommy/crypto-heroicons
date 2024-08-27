@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 43.8 43.6" viewBox="0 0 43.8 43.6" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <defs>
+    <filter id="a" width="43.8" height="43.6" x="0" y="0" filterUnits="userSpaceOnUse">
+      <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+    </filter>
+  </defs>
+  <mask id="b" width="43.8" height="43.6" x="0" y="0" maskUnits="userSpaceOnUse">
+    <g style="filter:url(#a)">
+      <path d="M0 0v46h216.3V0z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"/>
+    </g>
+  </mask>
+  <path d="M39.7 39.6H4V4h9.2v26.4h26.5v9.2zM26.6 4v13.2h13.1v9.1H17.3V4h9.3zm4 9.2h9V4h-9v9.2zM43.7 0H0v43.6h43.8V30.4L43.7 0z" style="mask:url(#b);fill-rule:evenodd;clip-rule:evenodd;fill:#6e38e5"/>
+</svg>
