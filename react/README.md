@@ -14,7 +14,7 @@ import { XToncoinTonLogoIcon } from 'react-crypto-heroicons/logos'
 function MyComponent() {
   return (
     <div>
-      <XToncoinTonLogoIcon className="size-6 text-blue-500" />
+      <XToncoinTonLogoIcon className="size-6" />
       <p>...</p>
     </div>
   )
